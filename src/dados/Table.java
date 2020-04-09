@@ -17,7 +17,7 @@ public class Table extends ModuloConector {
     public static void main(String[] args) {
 
     }
-    //--------------------Atributos de manipulação ao Banco de Dados------------//
+    //--------------------Atributos de manipulação ao Banco de Dados------- -----//
     private static Connection conexao;
     private static Statement stmt;
     private static ResultSet rs;
