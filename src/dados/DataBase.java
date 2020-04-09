@@ -39,7 +39,7 @@ public class DataBase extends ModuloConector {
     private static void dados() {
         conexao = getConecction1();
     }
-    //-------------------Metodo de Manipulação de Banco de dados-----------------//
+    //-------------------Metodo de Manipulação de Banco de dados----------------//
 
     /**
      * OK Este metodo faz a criação do banco de dados conforme o parametro
