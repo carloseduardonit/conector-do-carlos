@@ -5,6 +5,7 @@ package dados;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import informacao.Messagem;
 import java.sql.*;
 
@@ -30,19 +31,29 @@ public class Table extends ModuloConector {
     }
     //-------------------Metodo de Manipulação de Banco de dados-----------------//
 
+    public static void criarTabela(String sql, String Tabela) {
+        criarTabela(sql, Tabela, true);
+    }
+
     /**
      * Este Metodo criar uma tabela no banco de dados.
      *
      * @version 1.6
+     * @since 15/04/2020
+     * @param messagem
      * @since 21/07/2019
      * @param sql Seta uma informação de valor String da instrução MySql.
      * @param Tabela Seta uma informação de valor String do nome da Tabela.
      */
-    public static void criarTabela(String sql, String Tabela) {
+    public static void criarTabela(String sql, String Tabela, boolean messagem) {
         if (NaoHaCampoVazio(sql, Tabela)) {
             try {
                 Table();
-                Messagem.criadoTabela(Tabela);
+                if (messagem) {
+                    Messagem.criadoTabela(Tabela);
+                } else {
+                    Messagem.setCriada(0);
+                }
                 if (Messagem.getCriada() == 0) {
                     stmt = conexao.createStatement();
                     int criar = stmt.executeUpdate(sql);
@@ -54,6 +65,17 @@ public class Table extends ModuloConector {
             } catch (SQLException e) {
                 Messagem.chamarTela(Tabela + " erro Metodo CriarTabela: " + e);
                 ModuloConector.fecharConexao(conexao, rs, rsmd, pst, stmt);
+            }
+        }
+    }
+
+    public static void criarTabela(String sql, String Base, String Tabela, boolean messagem) {
+        if (DataBase.verificarNaoExisterDataBase(Base)) {
+            DataBase.criarDataBase(Base);
+            criarTabela(sql, Tabela, messagem);
+        } else {
+            if (verificarExisirTabela(Base, Tabela)) {
+                criarTabela(sql, Tabela, messagem);
             }
         }
     }
@@ -111,7 +133,7 @@ public class Table extends ModuloConector {
      */
     public static boolean verificarNaoExistirTabela(String dataBase, String Tabela) {
         try {
-            if (NaoHaCampoVazio(null, Tabela)) {
+            if (NaoHaCampoVazio(dataBase, Tabela)) {
                 Table();
                 String sql = "show tables in " + dataBase + " like ?";
                 pst = conexao.prepareStatement(sql);
