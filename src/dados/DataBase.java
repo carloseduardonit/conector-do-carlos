@@ -10,15 +10,19 @@ import java.io.*;
 import java.sql.*;
 
 /**
+ * Classe Responsavel pela manipulação da estrutura do Banco de Dados
  *
- * @author Carlos
+ * @author Carlos Eduardo dos Santos Figueiredo.
+ *
+ * @version 1.00
+ * @since 01/05/2019
  */
 public class DataBase extends ModuloConector {
 
     public static void main(String[] args) {
         //criarDataBase("teste");
         //deletarDataBase("teste");
-        verificarExisterDataBase("persons");
+        System.out.println(verificarNaoExisterDataBase("setorFinanceiro"));
         //System.out.println(HaCampoVazio(null, null));
     }
     //--------------------Atributos de manipulação ao Banco de Dados------------//
@@ -45,6 +49,11 @@ public class DataBase extends ModuloConector {
      * OK Este metodo faz a criação do banco de dados conforme o parametro
      * dataBase
      *
+     * @author Carlos Eduardo dos Santos Figueiredo.
+     *
+     * @version 1.00
+     * @since 01/05/2019
+     *
      * @param dataBase Setar uma informação de valor String do nome banco de
      * dados
      */
@@ -69,6 +78,11 @@ public class DataBase extends ModuloConector {
     /**
      * OK Este metodo faz a exclução do banco de dados e de todos os dados
      * conforme o parametro dataBase
+     *
+     * @author Carlos Eduardo dos Santos Figueiredo.
+     *
+     * @version 1.00
+     * @since 01/05/2019
      *
      * @param dataBase Setar uma informação de valor String do nome banco de
      * dados
@@ -106,11 +120,13 @@ public class DataBase extends ModuloConector {
     public static boolean verificarExisterDataBase(String dataBase) {
         boolean exister = false;
         if (NaoHaCampoVazio(null, dataBase)) {
-            String sql = "show databases like \"" + dataBase + "\"";
+            String sql = "show databases like ?";
             try {
                 dados();
-                stmt = conexao.createStatement();
-                exister = stmt.execute(sql);
+                pst = conexao.prepareStatement(sql);
+                pst.setString(1, dataBase + "%");
+                rs = pst.executeQuery();
+                exister = rs.next();
             } catch (SQLException se) {
                 Messagem.chamarTela(se);
             } finally {
@@ -158,7 +174,6 @@ public class DataBase extends ModuloConector {
         if (campo) {
             Messagem.chamarTela(Messagem.VAZIO(CampoVazio(CaminhoArquivo, dataBase)));
         }
-
         return campo;
     }
 

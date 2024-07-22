@@ -14,6 +14,8 @@ import java.sql.*;
  * @author Carlos Eduardo dos Santos Figueiredo
  * @see ModuloConector
  * @since 01/05/2019
+ * @version 1.3
+ * atualização Java doc
  */
 public class ModuloConector {
 
@@ -63,11 +65,7 @@ public class ModuloConector {
      */
     private static Statement stmt = null;
     private static int count = 0;
-
-    public static void main(String[] args) {
-        DataBase.criarDataBase("teste2");
-        //ImportarSQL();
-    }
+    private static Runtime r;
 
     //--------------------------------------------------------------- -----------//
     /**
@@ -144,7 +142,7 @@ public class ModuloConector {
      * variaveis finais
      *
      * @version 1.0
-     * @param Drive
+     * @param Drive Setar ima unformação de valor String com
      * @param Banco Setar uma informação de valor String com o nome banco de
      * dados
      * @param Usuario Setar uma informação de valor String com o nome do usuario
@@ -157,12 +155,14 @@ public class ModuloConector {
     public static java.sql.Connection getConecction(String Drive, String Banco, String Usuario, String Senha) {
         try {
             Class.forName(Drive);
-            return conexao = DriverManager.getConnection(URL + Banco + "\\", Usuario, Senha);
+            return conexao = DriverManager.getConnection(URL + Banco, Usuario, Senha);
         } // catch{ }
         catch (ClassNotFoundException cnfe) {
+            System.out.println(cnfe.getMessage());
             Messagem.chamarTela("O Servidor ultra-passou o limite de Conexão " + cnfe);
             fecharConexao(conexao, rs, rsmd, pst, stmt);
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             if (getCount() == 0) {
                 abrirAplicação();
                 setCount(+1);
@@ -226,9 +226,14 @@ public class ModuloConector {
 
     //--------------------------------------------------------------------------//
     /**
+     * Este Metodo faz a verificação conforme o parametro e Retornar uma
+     * informação de valor boolean da conexão se for TRUE: está Conexão e ser
+     * For FALSE: não esta Conexão.
      *
-     * @param conexao
-     * @return
+     * @param conexao Setar uma informação de valor Connection da conexao do
+     * banco de dados
+     * @return Retornar uma informação de valor boolean da conexão se for TRUE:
+     * está Conexão e ser For FALSE: não esta Conexão.
      */
     public static boolean isConectado(Connection conexao) {
         boolean res = conexao != null;
@@ -238,6 +243,19 @@ public class ModuloConector {
             System.out.println("nao Esta conextado");
         }
         return res;
+    }
+
+    /**
+     * Este Metodo faz a verificação conforme o parametro e Retornar uma
+     * informação de valor boolean da conexão se for TRUE: está Conexão e ser
+     * For FALSE: não esta Conexão.
+     *
+     * @return Retornar uma informação de valor boolean da conexão se for TRUE:
+     * está Conexão e ser For FALSE: não esta Conexão.
+     */
+    public static boolean isConectado() {
+        conector();
+        return isConectado(conexao);
     }
 
     //--------------------------------------------------------------------------//
@@ -260,12 +278,32 @@ public class ModuloConector {
      */
     public static void abrirAplicação(String caminhodaAplicação) {
         try {
-            Runtime r;
             r = Runtime.getRuntime();
             r.exec(caminhodaAplicação);
         } catch (IOException e) {
             Messagem.chamarTela(e);
         }
+    }
+
+    /**
+     *
+     */
+    public static void fecharAplicativo() {
+
+        r.runFinalization();
+    }
+
+    /**
+     *
+     * @return fazer
+     *
+     */
+    public static boolean estarAbertoAplicativo() {
+        boolean estar = false;
+
+        Runtime.getRuntime();
+
+        return estar;
     }
 
     //--------------------------------------------------------------------------//

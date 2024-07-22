@@ -5,13 +5,17 @@ package dados;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import com.sun.org.apache.xml.internal.security.utils.XMLUtils;
 import informacao.Messagem;
 import java.sql.*;
 
 /**
+ * Esta Classe e Responsavel pela manipulação estrutura e de informação das
+ * tabelas
  *
- * @author Carlos
+ * @author Carlos Eduardo dos Santos Figueiredo.
+ *
+ * @version 1.00
+ * @since 01/05/2019
  */
 public class Table extends ModuloConector {
 
@@ -26,11 +30,24 @@ public class Table extends ModuloConector {
     private static PreparedStatement pst;
 
     //-------------------Metodo de acesso ao Banco de dados----------------------//
+    /**
+     * Metodo faz a conexao com o banco de dados
+     */
     private static void Table() {
         conexao = ModuloConector.getConecction1();
     }
     //-------------------Metodo de Manipulação de Banco de dados-----------------//
 
+    /**
+     * Este Metodo criar uma tabela no banco de dados conforme o parametros e
+     * nao exibera a mensagem.
+     *
+     * @version 1.6
+     * @since 15/04/2020
+     *
+     * @param sql Seta uma informação de valor String da instrução MySql.
+     * @param Tabela Seta uma informação de valor String do nome da Tabela.
+     */
     public static void criarTabela(String sql, String Tabela) {
         criarTabela(sql, Tabela, true);
     }
@@ -40,7 +57,8 @@ public class Table extends ModuloConector {
      *
      * @version 1.6
      * @since 15/04/2020
-     * @param messagem
+     * @param messagem Setar uma informação de boolean se for TRUE: Exibira a
+     * Mensagem, se for FALSE: Não exibirar a Mensagem
      * @since 21/07/2019
      * @param sql Seta uma informação de valor String da instrução MySql.
      * @param Tabela Seta uma informação de valor String do nome da Tabela.
@@ -63,25 +81,36 @@ public class Table extends ModuloConector {
                     }
                 }
             } catch (SQLException e) {
+                System.err.println(e.getMessage());
                 Messagem.chamarTela(Tabela + " erro Metodo CriarTabela: " + e);
                 ModuloConector.fecharConexao(conexao, rs, rsmd, pst, stmt);
             }
         }
     }
 
+    /**
+     * Este Metodo criar uma tabela no banco de dados.
+     *
+     * @param sql Seta uma informação de valor String da instrução MySql.
+     * @param Base Setar uma informação de valor String do nome do banco de
+     * dados.
+     * @param Tabela Seta uma informação de valor String do nome da Tabela.
+     * @param messagem Setar uma informação de boolean se for TRUE: Exibira a
+     * Mensagem, se for FALSE: Não exibirar a Mensagem
+     */
     public static void criarTabela(String sql, String Base, String Tabela, boolean messagem) {
         if (DataBase.verificarNaoExisterDataBase(Base)) {
             DataBase.criarDataBase(Base);
             criarTabela(sql, Tabela, messagem);
         } else {
-            if (verificarExisirTabela(Base, Tabela)) {
+            if (verificarNaoExisirTabela(Base, Tabela)) {
                 criarTabela(sql, Tabela, messagem);
             }
         }
     }
 
     /**
-     * ok Este Metodo deletar a tabela mo banco de dados
+     * ok Este Metodo deletar a tabela mo banco de dados conforme os paramentro
      *
      * @param Tabela Seta uma informação de valor String do nome da Tabela.
      */
@@ -105,52 +134,70 @@ public class Table extends ModuloConector {
             }
         }
     }
+
+    /**
+     * ok Este Metodo deletar a tabela mo banco de dados
+     *
+     * @param base Setar uma informação de valor String do nome do banco de
+     * dados.
+     * @param Tabela Seta uma informação de valor String do nome da Tabela.
+     */
+    public static void deletarTabela(String base, String Tabela) {
+        if (NaoHaCampoVazio(base, Tabela)) {
+            deletarTabela(base + "." + Tabela);
+        }
+    }
     //------------------Metodo de Verificação ao Banco de dados-----------------//
 
     /**
      * Este Metodo Verifica se determinada Tabela nao existe return um valor
      * Boolean
      *
-     * @param dataBase
+     * @param dataBase Setar uma informação de valor String do nome banco de
+     * dados
      * @since 01/05/2019
      * @param Tabela Setar uma Informação de tipo String com o nome da Tabela
      * @return Retornar um valor Boolean
      *
      */
-    public static boolean verificarExisirTabela(String dataBase, String Tabela) {
-        return !verificarNaoExistirTabela(dataBase, Tabela);
+    public static boolean verificarNaoExisirTabela(String dataBase, String Tabela) {
+        return !verificarExistirTabela(dataBase, Tabela);
     }
 
     /**
      * Este Metodo Verifica se determinada Tabela nao existe return um valor
      * Boolean
      *
-     * @param dataBase
+     * @param dataBase Setar uma informação de valor String do nome banco de
+     * dados
      * @since 01/05/2019
      * @param Tabela Setar uma Informação de tipo String com o nome da Tabela
      * @return Retornar um valor Boolean
      *
      */
-    public static boolean verificarNaoExistirTabela(String dataBase, String Tabela) {
-        try {
-            if (NaoHaCampoVazio(dataBase, Tabela)) {
-                Table();
-                String sql = "show tables in " + dataBase + " like ?";
-                pst = conexao.prepareStatement(sql);
-                pst.setString(1, Tabela + "%");
-                rs = pst.executeQuery();
-                if (rs.next()) {
-                    return false;
+    public static boolean verificarExistirTabela(String dataBase, String Tabela) {
+        boolean nt = false, db = DataBase.verificarNaoExisterDataBase(dataBase);
+        if (db) {
+            nt = db;
+        } else {
+            try {
+                if (NaoHaCampoVazio(dataBase, Tabela)) {
+                    Table();
+                    String sql = "show tables in " + dataBase + " like ?";
+                    pst = conexao.prepareStatement(sql);
+                    pst.setString(1, Tabela + "%");
+                    rs = pst.executeQuery();
+                    nt = rs.next();
+                } else {
+                    Messagem.chamarTela("O campo tabela esta Vazio !!!");
                 }
+            } catch (SQLException e) {
+                Messagem.chamarTela("verificar Existir Tabela " + e);
+            } finally {
                 ModuloConector.fecharConexao(conexao, rs, rsmd, pst, stmt);
-            } else {
-                Messagem.chamarTela("O campo tabela esta Vazio !!!");
             }
-        } catch (SQLException e) {
-            Messagem.chamarTela(e);
         }
-        ModuloConector.fecharConexao(conexao, rs, rsmd, pst, stmt);
-        return true;
+        return nt;
     }
 
     //-------------------Metodo de Validação de Parametro-----------------------//
@@ -212,8 +259,10 @@ public class Table extends ModuloConector {
 
     //-----------------------------------------//
     /**
+     * Este Metodo retorna um array de informação
+     *
      * @version 1.6
-     * @return
+     * @return Retornar um array de imformação d
      * @since 21/07/2019
      * @param Tabela Seta uma informação de valor String do nome da Tabela.
      */
@@ -238,7 +287,8 @@ public class Table extends ModuloConector {
     /**
      * Este Metodo Obtem o numero de Linha de uma determinada tabela no banco
      *
-     * @param dataBase
+     * @param dataBase Setar uma informação de valor String do nome banco de
+     * dados
      * @since 10/07/2019
      * @param tabela Setar uma informação devalor String com o none da tabela .
      * @return Retornar uma informação de valor inteiro com a quantidade de
@@ -252,7 +302,8 @@ public class Table extends ModuloConector {
     /**
      * Este Metodo Obtem o numero de Linha de uma determinada tabela no banco
      *
-     * @param dataBase
+     * @param dataBase Setar uma informação de valor String do nome banco de
+     * dados
      * @since 11/07/2019
      * @version 1.5
      * @param tabela Setar uma informação devalor String com o none da tabela .
@@ -264,7 +315,7 @@ public class Table extends ModuloConector {
     public static int quantLinha(String dataBase, String tabela, String sql) {
         try {
             Table();
-            if (!Table.verificarNaoExistirTabela(dataBase, tabela)) {
+            if (Table.verificarExistirTabela(dataBase, tabela)) {
                 pst = conexao.prepareStatement(sql);
                 rs = pst.executeQuery();
                 rsmd = rs.getMetaData();
@@ -284,7 +335,8 @@ public class Table extends ModuloConector {
     /**
      * Este Metodo Obtem o numero de Coluna de uma determinada tabela no banco.
      *
-     * @param dataBase
+     * @param dataBase Setar uma informação de valor String do nome banco de
+     * dados
      * @since 10/07/2019
      * @version 1.4
      * @param tabela Setar uma informação devalor String com o none da tabela .
@@ -299,7 +351,8 @@ public class Table extends ModuloConector {
     /**
      * Este Metodo Obtem o numero de Coluna de uma determinada tabela no banco.
      *
-     * @param dataBase
+     * @param dataBase Setar uma informação de valor String do nome banco de
+     * dados
      * @since 11/07/2019
      * @version 1.5
      * @param tabela Setar uma informação devalor String com o none da tabela .
@@ -310,7 +363,7 @@ public class Table extends ModuloConector {
     public static int quantColuna(String dataBase, String tabela, String sql) {
         Table();
         try {
-            if (Table.verificarNaoExistirTabela(dataBase, tabela)) {
+            if (Table.verificarExistirTabela(dataBase, tabela)) {
                 pst = conexao.prepareStatement(sql);
                 pst.setString(1, tabela);
                 rs = pst.executeQuery();
