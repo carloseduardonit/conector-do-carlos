@@ -1,12 +1,23 @@
 # Conector do Carlos
 
+- <p><b>Projeto iniciado:</b>  10/09/2019</p>
+- <b>Author:</b> @carloseduardonit
+
 ## Objetivo:
 
-A Criação de Framework para utilização Java 8  e MY SQL permitindo a:
+<b> A Criação de Framework para utilização Java 8  e MY SQL permitindo a:</b>
 
 > - Criação da Base de dados;
 > - Criação, Seleção e Edição da Tabela;
 > - Manipulação dos dados inseridos.
+
+<b>Em Java:</b>
+
+> 1. Mostrar meus conhecimentos em implementação da API  de JBDC  de MySql,
+
+<b>Em MySQL:</b>
+
+> 1. Mostrar na Criação de banco de dados,
 
 ###
 
