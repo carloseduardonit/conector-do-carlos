@@ -2,6 +2,7 @@
 
 > - **Projeto iniciado:** 10/09/2019
 > - **Author:** Eu.
+> - **Tempo medio:** 40 horas
 
 ## Pré-requisitos:
 
@@ -44,3 +45,8 @@
 #### Colabore para o cafezinho
 
 <img src="./Qr PIX.jpg" width="200">
+
+> [!NOTE]
+> "A empatia é certamente um dos mais nobres sentimentos humanos. 
+>  Para entender e ajudar o próximo é necessário se imaginar na condição dele."
+[Lázaro de Souza Gomes](https://www.pensador.com/autor/lazaro_de_souza_gomes/)
