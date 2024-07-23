@@ -1,7 +1,7 @@
 # Conector do Carlos
 
-- **Projeto iniciado:** 10/09/2019
-- **Author:** Eu.
+> - **Projeto iniciado:** 10/09/2019
+> - **Author:** Eu.
 
 ## Objetivo:
 
@@ -19,7 +19,7 @@
 **Mostrar meus conhecimentos em MySQL:**
 
 > 1. Na criação de banco de dados,
-> 2. Realizar os eventos do CRUD.
+> 2. Na realização dos eventos do CRUD.
 
 ###
 
@@ -34,3 +34,6 @@
 #### Acesse minhas redes ou entre contato:
 
 > [![Telegram](https://img.shields.io/badge/Telegram-000?style=for-the-badge&logo=telegram&logoColor=2CA5E0)](https://t.me/Carlaol)[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/carlos-eduardo-dos-s-figueiredo/)[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/carloseduardonit)[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5521985745077)[![Gmail](https://img.shields.io/badge/Gmail-333333?style=for-the-badge&logo=gmail&logoColor=red)](mailto:carlostecnicowl+github@gmail.com)
+
+**Colabore**
+
