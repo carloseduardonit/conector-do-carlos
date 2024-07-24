@@ -2,4 +2,6 @@
 
 ## Netbens:
 
+> 1. Baixe  o NetBeans
+
 ## VsCode:
