@@ -7,8 +7,8 @@
 ## Pré-requisitos:
 
 > - [Ter Instalado JDK 8 ou superior](https://github.com/carloseduardonit/conector-do-carlos/blob/master/dist/manual/INSTALA%C3%87%C3%83O_DO_JDK.md),
-> - [Ter Instalado o NetBens e VsCode](),
-> - [Ter Instalado o servidor MySQL](),
+> - [Ter Instalado o NetBens e VsCode](https://github.com/carloseduardonit/conector-do-carlos/blob/270499a0e4c008b72f496eafce44e7816e158def/dist/manual/INSTALA%C3%87%C3%83O_DA_IDE.md),
+> - [Ter Instalado o servidor MySQL](https://github.com/carloseduardonit/conector-do-carlos/blob/270499a0e4c008b72f496eafce44e7816e158def/dist/manual/INSTALA%C3%87%C3%83O_DO_SERVIDOR_MYSQL.md),
 
 ## Objetivo:
 
