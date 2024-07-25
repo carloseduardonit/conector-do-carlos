@@ -2,7 +2,7 @@
 
 > - **Projeto iniciado:** 10/09/2019
 > - **Author:** Eu.
-> - **Tempo medio:** 40 horas :snail:
+> - **Tempo medio:** 44 horas :snail:
 
 ## Pré-requisitos:
 
@@ -13,13 +13,23 @@
 >   - [Mensagem.jar](https://github.com/carloseduardonit/conector-do-carlos/blob/d19ebd915c057d31dd1e17d49ece4c07abf86fc6/lib/Mensagem.jar)
 >   - [mysql-connector-java-5.1.23-bin.jar](https://github.com/carloseduardonit/conector-do-carlos/blob/afcd28e468441fa67aa02b5b319026fe84776a93/lib/mysql-connector-java-5.1.23-bin.jar)
 
-## Refatoração:
+## Refatoração e Reestrutução das Documentações:
 
-> - [ ] Classe DataBase
->   - [x] Classe DataBaseTransformer
->   - [ ] Classe DataBaseValidator
-> - [ ] ModuloConector
+> - [ ] Melhoria na documentações :triangular_flag_on_post:
+>   - [ ] Read Me :triangular_flag_on_post:
+>   - [ ] Elaboração das Feature em gherkin
+>   - [ ] Instalação do JDK :triangular_flag_on_post:
+>   - [ ] Instalação da IDE's :triangular_flag_on_post:
+>   - [ ] Instalação do Servidor My SQL :triangular_flag_on_post:
+> - [ ] Refatoração das Classes e os metodos
+>   - [ ] Classe DataBase :triangular_flag_on_post:
+>     - [ ] Classe DataBaseTransformer :triangular_flag_on_post:
+>     - [ ] Classe DataBaseValidator
+>   - [ ] ModuloConector
+>   - [ ] Criação das classe de teste
+>   - [ ] 
 
+:triangular_flag_on_post:  Iniciado
 ## Objetivo:
 
 **A Criação de Framework para utilização Java 8  e MY SQL permitindo a:**
