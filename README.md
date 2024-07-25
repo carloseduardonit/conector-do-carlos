@@ -2,7 +2,7 @@
 
 > - **Projeto iniciado:** 10/09/2019
 > - **Author:** Eu.
-> - **Tempo medio:** 40 horas
+> - **Tempo medio:** 40 horas :snail:
 
 ## Pré-requisitos:
 
@@ -15,9 +15,10 @@
 
 ## Refatoração:
 
-> - [] Classe DataBase
+> - [ ] Classe DataBase
 >   - [x] Classe DataBaseTransformer
->   - [] Classe DataBaseValidator
+>   - [ ] Classe DataBaseValidator
+> - [ ] ModuloConector
 
 ## Objetivo:
 
@@ -29,8 +30,9 @@
 
 **Mostrar meus conhecimentos em Java:**
 
-> 1. Na implementação da API  de JBDC  de MySql neste projeto,
-> 2. Na estruturação do documentação JAVADOC deste projeto.
+> 1. Na utilização de Orientação Objeto
+> 2. Na implementação da API de JBDC  de MySql e Api legada Mensagem neste projeto,
+> 3. Na estruturação do documentação JAVADOC deste projeto.
 
 **Mostrar meus conhecimentos em MySQL:**
 
@@ -51,7 +53,7 @@
 
 > [![Telegram](https://img.shields.io/badge/Telegram-000?style=for-the-badge&logo=telegram&logoColor=2CA5E0)](https://t.me/Carlaol)[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/carlos-eduardo-dos-s-figueiredo/)[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/carloseduardonit)[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5521985745077)[![Gmail](https://img.shields.io/badge/Gmail-333333?style=for-the-badge&logo=gmail&logoColor=red)](mailto:carlostecnicowl+github@gmail.com)
 
-#### Colabore para o cafezinho
+#### :coffee: Colabore para o cafezinho :coffee:
 
 <img src="./Qr PIX.jpg" width="200">
 

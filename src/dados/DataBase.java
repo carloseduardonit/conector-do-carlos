@@ -88,7 +88,7 @@ public class DataBase extends ModuloConector {
                 int deletada = stmt.executeUpdate(sql);
                 System.out.println(deletada);
                 if (deletada > 0) {
-                    Messagem.chamarTela(Messagem.EXCLUIDO("Banco " + dataBase));
+                    Messagem.chamarTela(Messagem.EXCLUIDO("Banco de Dado " + dataBase));
                 }
                 stmt = conexao.createStatement();
             } catch (SQLException e) {
