@@ -27,7 +27,7 @@
 >     - [ ] Classe DataBaseValidator
 >   - [ ] ModuloConector
 >   - [ ] Criação das classe de teste
->   - [ ] 
+>   - [ ] Table
 
 :triangular_flag_on_post:  Iniciado
 ## Objetivo:
@@ -38,24 +38,25 @@
 > - Criação, Seleção e Edição da Tabela;
 > - Manipulação dos dados inseridos.
 
-**Mostrar meus conhecimentos em Java:**
+**:man_technologist: Mostrar meus conhecimentos em Java:**
 
 > 1. Na utilização de Orientação Objeto
-> 2. Na implementação da API de JBDC  de MySql e Api legada Mensagem neste projeto,
+> 2. Na implementação da API de JBDC de MySql e API legada Mensagem neste projeto,
+>  
 > 3. Na estruturação do documentação JAVADOC deste projeto.
 
-**Mostrar meus conhecimentos em MySQL:**
+**:man_technologist: Mostrar meus conhecimentos em MySQL:**
 
 > 1. Na criação de banco de dados,
 > 2. Na realização dos eventos do CRUD.
 
 ###
 
-#### Linguagens utilizadas:
+#### :writing_hand: Linguagens utilizadas:
 
 >![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 
-#### Este documento e escrito em:
+#### :writing_hand: Este documento e escrito em:
 
 > ![Markdown](https://img.shields.io/badge/Markdown-000?style=for-the-badge&logo=markdown)![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
@@ -71,3 +72,11 @@
 > "A empatia é certamente um dos mais nobres sentimentos humanos. 
 >  Para entender e ajudar o próximo é necessário se imaginar na condição dele."
 [Lázaro de Souza Gomes](https://www.pensador.com/autor/lazaro_de_souza_gomes/)
+
+#### Material  de Suporte:
+
+- [Iconografia](https://github.com/ikatyang/emoji-cheat-sheet/tree/master?tab=readme-ov-file#activities)
+- [Sintaxe básica de gravação e formatação no GitHub](https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [Trabalhar com formatação avançadano GitHub](https://docs.github.com/pt/get-started/writing-on-github/working-with-advanced-formatting)
+- [Gherkin Imperativo X declarativo](https://cwi.com.br/blog/gherkin-imperativo-x-declarativo/)
+- 
