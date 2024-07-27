@@ -30,6 +30,7 @@
 >   - [ ] Table
 
 :triangular_flag_on_post:  Iniciado
+
 ## Objetivo:
 
 **A Criação de Framework para utilização Java 8  e MY SQL permitindo a:**
@@ -66,7 +67,7 @@
 
 #### :coffee: Colabore para o cafezinho :coffee:
 
-<img src="./Qr PIX.jpg" width="200">
+<img src="https://github.com/carloseduardonit/conector-do-carlos/blob/bbacf217c11df84b7826304709271bf0d854d1ee/Qr%20PIX.jpg" width="200">
 
 > [!NOTE]
 > "A empatia é certamente um dos mais nobres sentimentos humanos. 
