@@ -8,8 +8,7 @@
 
 > - [Ter Instalado JDK 8 ou superior](https://github.com/carloseduardonit/manual/blob/main/Java/INSTALA%C3%87%C3%83O_DO_JDK.md),
 > - [Ter Instalado o NetBens e VsCode](https://github.com/carloseduardonit/manual/blob/main/IDEs/INSTALA%C3%87%C3%83O_DA_IDE.md),
-> - [Ter Instalado o servidor MySQL](https://github.com/carloseduardonit/manual/blob/4dbbd4fb95e92e100c74e9b8a484512cc6021c0a/MySQL/INSTALA%C3%87%C3%83O_DO_SERVIDOR_MYSQL.md);
-),
+> - [Ter Instalado o servidor MySQL](https://github.com/carloseduardonit/manual/blob/main/MySQL/INSTALA%C3%87%C3%83O_DO_SERVIDOR_MYSQL.md);
 > - Ter o  arquivo JAR
 >   - [Mensagem.jar](https://github.com/carloseduardonit/conector-do-carlos/blob/d19ebd915c057d31dd1e17d49ece4c07abf86fc6/lib/Mensagem.jar)
 >   - [mysql-connector-java-5.1.23-bin.jar](https://github.com/carloseduardonit/conector-do-carlos/blob/afcd28e468441fa67aa02b5b319026fe84776a93/lib/mysql-connector-java-5.1.23-bin.jar)
