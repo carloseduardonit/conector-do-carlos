@@ -264,8 +264,8 @@ public class ModuloConector {
      * definida.
      */
     public static void abrirAplicação() {
-        String b = "C:\\xampp\\xampp-control.exe";
-        abrirAplicação(b);
+        String xamp = "C:\\xampp\\xampp-control.exe";
+        abrirAplicação(xamp);
 
     }
 
