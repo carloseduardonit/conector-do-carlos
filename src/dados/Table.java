@@ -103,7 +103,7 @@ public class Table extends ModuloConector {
             DataBase.criarDataBase(Base);
             criarTabela(sql, Tabela, messagem);
         } else {
-            if (verificarNaoExisirTabela(Base, Tabela)) {
+            if (verificarNaoExistirTabela(Base, Tabela)) {
                 criarTabela(sql, Tabela, messagem);
             }
         }
@@ -160,7 +160,7 @@ public class Table extends ModuloConector {
      * @return Retornar um valor Boolean
      *
      */
-    public static boolean verificarNaoExisirTabela(String dataBase, String Tabela) {
+    public static boolean verificarNaoExistirTabela(String dataBase, String Tabela) {
         return !verificarExistirTabela(dataBase, Tabela);
     }
 
